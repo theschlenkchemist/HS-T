@@ -8,166 +8,145 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg:        #0A1A10;
-    --card:      #111E15;
-    --card2:     #162B1C;
-    --card3:     #1C3824;
-    --card4:     #22452C;
-    --green:     #00C46A;
-    --green-dim: #00A856;
-    --green-pale:#D1FAE5;
-    --white:     #F0F7F2;
-    --grey:      #6B8A74;
-    --grey2:     #4A6352;
-    --dark-green:#003D1F;
-    --mono:      'DM Mono', monospace;
-    --head:      'Syne', sans-serif;
-    --body:      'DM Sans', sans-serif;
-    --radius:    12px;
-    --t:         0.38s cubic-bezier(0.4,0,0.2,1);
+    --bg:#0A1A10;--card:#111E15;--green:#00C46A;--green-dim:#00A856;
+    --green-pale:#D1FAE5;--white:#F0F7F2;--grey:#6B8A74;--grey2:#4A6352;
+    --mono:'DM Mono',monospace;--head:'Syne',sans-serif;--body:'DM Sans',sans-serif;
+    --radius:12px;--t:0.38s cubic-bezier(0.4,0,0.2,1);
   }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg);
-    color: var(--white);
-    font-family: var(--body);
-    font-size: 16px;
-    line-height: 1.6;
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
-  .wrap { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: 0 24px; }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--white);font-family:var(--body);font-size:16px;line-height:1.6;min-height:100vh;overflow-x:hidden;}
+  .wrap{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:0 24px;}
 
   /* HERO */
-  .hero { padding: 72px 0 56px; border-bottom: 1px solid rgba(0,196,106,0.12); }
-  .logo { font-family: var(--head); font-size: 13px; font-weight: 700; letter-spacing: 0.22em; color: var(--green); text-transform: uppercase; margin-bottom: 48px; display: flex; align-items: center; gap: 10px; }
-  .hero-eyebrow { font-family: var(--mono); font-size: 11px; color: var(--grey); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 20px; }
-  .hero-title { font-family: var(--head); font-size: clamp(32px, 5.5vw, 54px); font-weight: 800; line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 24px; }
-  .hero-title .accent { color: var(--green); }
-  .hero-sub { font-size: 16px; color: var(--grey); font-weight: 300; max-width: 520px; margin-bottom: 48px; line-height: 1.7; }
+  .hero{padding:72px 0 56px;border-bottom:1px solid rgba(0,196,106,0.12);}
+  .logo{font-family:var(--head);font-size:13px;font-weight:700;letter-spacing:0.22em;color:var(--green);text-transform:uppercase;margin-bottom:48px;display:flex;align-items:center;gap:10px;}
+  .hero-eyebrow{font-family:var(--mono);font-size:11px;color:var(--grey);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:20px;}
+  .hero-title{font-family:var(--head);font-size:clamp(32px,5.5vw,54px);font-weight:800;line-height:1.08;letter-spacing:-0.02em;margin-bottom:24px;}
+  .hero-title .accent{color:var(--green);}
+  .hero-sub{font-size:16px;color:var(--grey);font-weight:300;max-width:520px;margin-bottom:48px;line-height:1.7;}
 
   /* STATS ROW */
-  .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(0,196,106,0.1); border: 1px solid rgba(0,196,106,0.1); border-radius: var(--radius); overflow: hidden; margin-bottom: 64px; }
-  .stat-cell { background: var(--card); padding: 24px 20px; text-align: center; }
-  .stat-num { font-family: var(--head); font-size: clamp(20px, 3vw, 28px); font-weight: 800; color: var(--green); letter-spacing: -0.02em; line-height: 1; margin-bottom: 6px; }
-  .stat-label { font-family: var(--mono); font-size: 10px; color: var(--grey); letter-spacing: 0.12em; text-transform: uppercase; }
+  .stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(0,196,106,0.1);border:1px solid rgba(0,196,106,0.1);border-radius:var(--radius);overflow:hidden;margin-bottom:64px;}
+  .stat-cell{background:var(--card);padding:24px 20px;text-align:center;}
+  .stat-num{font-family:var(--head);font-size:clamp(20px,3vw,28px);font-weight:800;color:var(--green);letter-spacing:-0.02em;line-height:1;margin-bottom:6px;}
+  .stat-label{font-family:var(--mono);font-size:10px;color:var(--grey);letter-spacing:0.12em;text-transform:uppercase;}
 
   /* SECTION HEADER */
-  .section-header { font-family: var(--mono); font-size: 11px; color: var(--grey); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 20px; padding-top: 48px; }
+  .section-header{font-family:var(--mono);font-size:11px;color:var(--grey);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:20px;padding-top:48px;}
 
   /* CARDS */
-  .cards { display: flex; flex-direction: column; gap: 2px; margin-bottom: 16px; }
-  .card { background: var(--card); border-radius: var(--radius); border: 1px solid rgba(0,196,106,0.08); overflow: hidden; transition: border-color var(--t); animation: fadeUp 0.5s ease both; }
-  .card:nth-child(1) { animation-delay: 0.35s; }
-  .card:nth-child(2) { animation-delay: 0.45s; }
-  .card:nth-child(3) { animation-delay: 0.55s; }
-  .card.hero-card { background: linear-gradient(135deg, #003D1F 0%, #004D26 100%); border-color: rgba(0,196,106,0.35); }
-  .card.open { border-color: rgba(0,196,106,0.3); }
-  .card.hero-card.open { border-color: var(--green); }
-
-  .card-head { padding: 28px 28px 24px; cursor: pointer; user-select: none; display: flex; align-items: flex-start; gap: 20px; transition: background var(--t); }
-  .card-head:hover { background: rgba(0,196,106,0.04); }
-  .hero-card .card-head:hover { background: rgba(0,196,106,0.08); }
-  .card-num { font-family: var(--mono); font-size: 11px; color: var(--green); letter-spacing: 0.1em; min-width: 28px; padding-top: 4px; opacity: 0.7; }
-  .card-head-content { flex: 1; }
-  .card-tag { font-family: var(--mono); font-size: 10px; color: var(--grey); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 8px; }
-  .hero-card .card-tag { color: rgba(209,250,229,0.6); }
-  .card-headline { font-family: var(--head); font-size: clamp(17px, 2.6vw, 22px); font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; color: var(--white); margin-bottom: 6px; }
-  .card-subhead { font-size: 13px; color: var(--grey); font-weight: 300; }
-  .hero-card .card-subhead { color: rgba(209,250,229,0.7); }
-  .card-chevron { margin-left: auto; padding-top: 6px; color: var(--green); opacity: 0.5; transition: transform var(--t), opacity var(--t); flex-shrink: 0; }
-  .card.open .card-chevron { transform: rotate(180deg); opacity: 1; }
+  .cards{display:flex;flex-direction:column;gap:2px;margin-bottom:16px;}
+  .card{background:var(--card);border-radius:var(--radius);border:1px solid rgba(0,196,106,0.08);overflow:hidden;transition:border-color var(--t);animation:fadeUp 0.5s ease both;}
+  .card:nth-child(1){animation-delay:0.35s;}
+  .card:nth-child(2){animation-delay:0.45s;}
+  .card:nth-child(3){animation-delay:0.55s;}
+  .card.hero-card{background:linear-gradient(135deg,#003D1F 0%,#004D26 100%);border-color:rgba(0,196,106,0.35);}
+  .card.open{border-color:rgba(0,196,106,0.3);}
+  .card.hero-card.open{border-color:var(--green);}
+  .card-head{padding:28px 28px 24px;cursor:pointer;user-select:none;display:flex;align-items:flex-start;gap:20px;transition:background var(--t);}
+  .card-head:hover{background:rgba(0,196,106,0.04);}
+  .hero-card .card-head:hover{background:rgba(0,196,106,0.08);}
+  .card-num{font-family:var(--mono);font-size:11px;color:var(--green);letter-spacing:0.1em;min-width:28px;padding-top:4px;opacity:0.7;}
+  .card-head-content{flex:1;}
+  .card-tag{font-family:var(--mono);font-size:10px;color:var(--grey);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:8px;}
+  .hero-card .card-tag{color:rgba(209,250,229,0.6);}
+  .card-headline{font-family:var(--head);font-size:clamp(17px,2.6vw,22px);font-weight:700;line-height:1.2;letter-spacing:-0.01em;color:var(--white);margin-bottom:6px;}
+  .card-subhead{font-size:13px;color:var(--grey);font-weight:300;}
+  .hero-card .card-subhead{color:rgba(209,250,229,0.7);}
+  .card-chevron{margin-left:auto;padding-top:6px;color:var(--green);opacity:0.5;transition:transform var(--t),opacity var(--t);flex-shrink:0;}
+  .card.open .card-chevron{transform:rotate(180deg);opacity:1;}
 
   /* LEVELS */
-  .card-levels { display: none; }
-  .card.open .card-levels { display: block; }
-  .level { overflow: hidden; max-height: 0; transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1); }
-  .level.visible { max-height: 3000px; }
-  .level-inner { border-top: 1px solid rgba(0,196,106,0.1); padding: 24px 28px 28px 76px; }
-  .level-2 .level-inner { background: rgba(0,196,106,0.04); }
-  .level-3 .level-inner { background: rgba(0,196,106,0.07); }
-  .level-4 .level-inner { background: rgba(0,196,106,0.10); }
-  .hero-card .level-2 .level-inner { background: rgba(0,196,106,0.06); }
-  .hero-card .level-3 .level-inner { background: rgba(0,196,106,0.10); }
-  .hero-card .level-4 .level-inner { background: rgba(0,196,106,0.14); }
-  .level-label { font-family: var(--mono); font-size: 10px; color: var(--green); letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.6; margin-bottom: 14px; }
-  .level-prose { font-size: 14px; color: rgba(240,247,242,0.8); line-height: 1.75; font-weight: 300; max-width: 560px; }
+  .card-levels{display:none;}
+  .card.open .card-levels{display:block;}
+  .level{overflow:hidden;max-height:0;transition:max-height 0.5s cubic-bezier(0.4,0,0.2,1);}
+  .level.visible{max-height:3000px;}
+  .level-inner{border-top:1px solid rgba(0,196,106,0.1);padding:24px 28px 28px 76px;}
+  .level-2 .level-inner{background:rgba(0,196,106,0.04);}
+  .level-3 .level-inner{background:rgba(0,196,106,0.07);}
+  .level-4 .level-inner{background:rgba(0,196,106,0.10);}
+  .hero-card .level-2 .level-inner{background:rgba(0,196,106,0.06);}
+  .hero-card .level-3 .level-inner{background:rgba(0,196,106,0.10);}
+  .hero-card .level-4 .level-inner{background:rgba(0,196,106,0.14);}
+  .level-label{font-family:var(--mono);font-size:10px;color:var(--green);letter-spacing:0.16em;text-transform:uppercase;opacity:0.6;margin-bottom:14px;}
+  .level-prose{font-size:14px;color:rgba(240,247,242,0.8);line-height:1.75;font-weight:300;max-width:560px;}
 
   /* KV */
-  .kv-grid { display: flex; flex-direction: column; gap: 0; }
-  .kv-row { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: baseline; padding: 9px 0; border-bottom: 1px solid rgba(0,196,106,0.06); }
-  .kv-row:last-child { border-bottom: none; }
-  .kv-key { font-size: 13px; color: rgba(240,247,242,0.65); font-weight: 300; line-height: 1.4; }
-  .kv-key .source { font-family: var(--mono); font-size: 9px; color: var(--grey2); letter-spacing: 0.1em; display: block; margin-top: 2px; }
-  .kv-val { font-family: var(--mono); font-size: 13px; color: var(--green); font-weight: 500; text-align: right; white-space: nowrap; }
-  .kv-note { margin-top: 16px; padding: 12px 14px; background: rgba(0,196,106,0.06); border-left: 2px solid var(--green-dim); border-radius: 4px; font-size: 12px; color: var(--grey); line-height: 1.6; font-style: italic; }
+  .kv-grid{display:flex;flex-direction:column;gap:0;}
+  .kv-row{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;padding:9px 0;border-bottom:1px solid rgba(0,196,106,0.06);}
+  .kv-row:last-child{border-bottom:none;}
+  .kv-key{font-size:13px;color:rgba(240,247,242,0.65);font-weight:300;line-height:1.4;}
+  .kv-key .source{font-family:var(--mono);font-size:9px;color:var(--grey2);letter-spacing:0.1em;display:block;margin-top:2px;}
+  .kv-val{font-family:var(--mono);font-size:13px;color:var(--green);font-weight:500;text-align:right;white-space:nowrap;}
+  .kv-note{margin-top:16px;padding:12px 14px;background:rgba(0,196,106,0.06);border-left:2px solid var(--green-dim);border-radius:4px;font-size:12px;color:var(--grey);line-height:1.6;font-style:italic;}
 
   /* BUTTONS */
-  .btn-row { display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
-  .btn { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; padding: 8px 16px; border-radius: 6px; cursor: pointer; border: 1px solid rgba(0,196,106,0.3); background: transparent; color: var(--green); transition: all 0.2s ease; display: flex; align-items: center; gap: 6px; }
-  .btn:hover { background: rgba(0,196,106,0.1); border-color: var(--green); }
-  .btn.collapse { border-color: rgba(240,247,242,0.1); color: var(--grey); }
-  .btn.collapse:hover { background: rgba(240,247,242,0.04); border-color: rgba(240,247,242,0.2); color: var(--white); }
-
-  /* ── TRAJECTORY SECTION ── */
-  .trajectory-section { margin-bottom: 64px; }
-
-  /* TOGGLE */
-  .toggle-group { display: flex; gap: 2px; background: rgba(0,196,106,0.08); border: 1px solid rgba(0,196,106,0.15); border-radius: 10px; padding: 4px; margin-bottom: 32px; flex-wrap: wrap; }
-  .toggle-btn { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; padding: 9px 14px; border-radius: 7px; cursor: pointer; border: none; background: transparent; color: var(--grey); transition: all 0.2s ease; flex: 1; text-align: center; min-width: 120px; }
-  .toggle-btn:hover { color: var(--white); }
-  .toggle-btn.active { background: var(--green); color: #0A1A10; font-weight: 500; }
-
-  /* TRAJECTORY TABLE */
-  .traj-table { width: 100%; border-collapse: collapse; }
-  .traj-table th { font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey); padding: 10px 12px; text-align: left; border-bottom: 1px solid rgba(0,196,106,0.12); }
-  .traj-table th:not(:first-child) { text-align: right; }
-  .traj-table td { font-size: 13px; padding: 10px 12px; border-bottom: 1px solid rgba(0,196,106,0.06); color: rgba(240,247,242,0.75); }
-  .traj-table td:not(:first-child) { font-family: var(--mono); font-size: 12px; text-align: right; }
-  .traj-table td.year { font-family: var(--mono); font-size: 11px; color: var(--grey); }
-  .traj-table td.avoided { color: var(--green); font-weight: 500; }
-  .traj-table tr:last-child td { border-bottom: none; }
-  .traj-table tr.milestone { background: rgba(0,196,106,0.05); }
-  .traj-table tr.milestone td { color: var(--white); }
-  .traj-table tr.milestone td.avoided { color: var(--green); }
-
-  .traj-note { font-size: 12px; color: var(--grey2); margin-top: 14px; font-style: italic; line-height: 1.6; }
+  .btn-row{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;}
+  .btn{font-family:var(--mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;padding:8px 16px;border-radius:6px;cursor:pointer;border:1px solid rgba(0,196,106,0.3);background:transparent;color:var(--green);transition:all 0.2s ease;display:flex;align-items:center;gap:6px;}
+  .btn:hover{background:rgba(0,196,106,0.1);border-color:var(--green);}
+  .btn.collapse{border-color:rgba(240,247,242,0.1);color:var(--grey);}
+  .btn.collapse:hover{background:rgba(240,247,242,0.04);border-color:rgba(240,247,242,0.2);color:var(--white);}
 
   /* METHODOLOGY SPLIT */
-  .method-section { margin-bottom: 64px; }
-  .method-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-  .method-card { background: var(--card); border: 1px solid rgba(0,196,106,0.08); border-radius: var(--radius); padding: 28px; }
-  .method-card.full { grid-column: 1 / -1; background: rgba(0,196,106,0.06); border-color: rgba(0,196,106,0.2); }
-  .method-title { font-family: var(--head); font-size: 13px; font-weight: 700; color: var(--green); margin-bottom: 8px; }
-  .method-num { font-family: var(--head); font-size: clamp(24px, 3.5vw, 34px); font-weight: 800; color: var(--white); letter-spacing: -0.02em; line-height: 1; margin-bottom: 8px; }
-  .method-desc { font-size: 13px; color: var(--grey); line-height: 1.6; font-weight: 300; }
+  .method-section{margin-bottom:64px;}
+  .method-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;}
+  .method-card{background:var(--card);border:1px solid rgba(0,196,106,0.08);border-radius:var(--radius);padding:28px;}
+  .method-card.full{grid-column:1/-1;background:rgba(0,196,106,0.06);border-color:rgba(0,196,106,0.2);}
+  .method-title{font-family:var(--head);font-size:13px;font-weight:700;color:var(--green);margin-bottom:8px;}
+  .method-num{font-family:var(--head);font-size:clamp(24px,3.5vw,34px);font-weight:800;color:var(--white);letter-spacing:-0.02em;line-height:1;margin-bottom:8px;}
+  .method-desc{font-size:13px;color:var(--grey);line-height:1.6;font-weight:300;}
+
+  /* TRAJECTORY */
+  .trajectory-section{margin-bottom:64px;}
+  .toggle-group{display:flex;gap:2px;background:rgba(0,196,106,0.08);border:1px solid rgba(0,196,106,0.15);border-radius:10px;padding:4px;margin-bottom:32px;flex-wrap:wrap;}
+  .toggle-btn{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;padding:9px 14px;border-radius:7px;cursor:pointer;border:none;background:transparent;color:var(--grey);transition:all 0.2s ease;flex:1;text-align:center;min-width:120px;}
+  .toggle-btn:hover{color:var(--white);}
+  .toggle-btn.active{background:var(--green);color:#0A1A10;font-weight:500;}
+  .traj-table{width:100%;border-collapse:collapse;}
+  .traj-table th{font-family:var(--mono);font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--grey);padding:10px 12px;text-align:left;border-bottom:1px solid rgba(0,196,106,0.12);}
+  .traj-table th:not(:first-child){text-align:right;}
+  .traj-table td{font-size:13px;padding:10px 12px;border-bottom:1px solid rgba(0,196,106,0.06);color:rgba(240,247,242,0.75);}
+  .traj-table td:not(:first-child){font-family:var(--mono);font-size:12px;text-align:right;}
+  .traj-table td.year{font-family:var(--mono);font-size:11px;color:var(--grey);}
+  .traj-table td.avoided{color:var(--green);font-weight:500;}
+  .traj-table tr:last-child td{border-bottom:none;}
+  .traj-table tr.milestone{background:rgba(0,196,106,0.05);}
+  .traj-table tr.milestone td{color:var(--white);}
+  .traj-note{font-size:12px;color:var(--grey2);margin-top:14px;font-style:italic;line-height:1.6;}
+
+  /* REFERENCES */
+  .refs-section{border-top:1px solid rgba(0,196,106,0.08);padding:32px 0 0;margin-bottom:48px;}
+  .refs-title{font-family:var(--mono);font-size:10px;color:var(--grey);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:16px;}
+  .refs-list{display:flex;flex-direction:column;gap:8px;}
+  .ref-item{font-size:11px;color:var(--grey2);line-height:1.5;font-family:var(--mono);}
+  .ref-item span{color:var(--green);margin-right:8px;}
 
   /* FOOTER */
-  .footer { border-top: 1px solid rgba(0,196,106,0.1); padding: 48px 0 64px; display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap; }
-  .footer-left { max-width: 420px; }
-  .footer-title { font-family: var(--head); font-size: 13px; font-weight: 600; color: var(--green); margin-bottom: 8px; letter-spacing: 0.04em; }
-  .footer-text { font-size: 12px; color: var(--grey); line-height: 1.7; font-weight: 300; }
-  .qr-box { width: 100px; height: 100px; border: 1px dashed rgba(0,196,106,0.3); border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; flex-shrink: 0; }
-  .qr-label { font-family: var(--mono); font-size: 8px; color: var(--grey2); letter-spacing: 0.1em; text-transform: uppercase; text-align: center; }
+  .footer{border-top:1px solid rgba(0,196,106,0.1);padding:48px 0 64px;display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap;}
+  .footer-left{max-width:420px;}
+  .footer-title{font-family:var(--head);font-size:13px;font-weight:600;color:var(--green);margin-bottom:8px;letter-spacing:0.04em;}
+  .footer-text{font-size:12px;color:var(--grey);line-height:1.7;font-weight:300;}
+  .qr-box{width:100px;height:100px;border:1px dashed rgba(0,196,106,0.3);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;flex-shrink:0;}
+  .qr-label{font-family:var(--mono);font-size:8px;color:var(--grey2);letter-spacing:0.1em;text-transform:uppercase;text-align:center;}
 
   /* ANIMATIONS */
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-  .hero-eyebrow { animation: fadeUp 0.6s ease both; }
-  .hero-title    { animation: fadeUp 0.6s 0.1s ease both; }
-  .hero-sub      { animation: fadeUp 0.6s 0.2s ease both; }
-  .stats-row     { animation: fadeUp 0.6s 0.3s ease both; }
+  @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+  .hero-eyebrow{animation:fadeUp 0.6s ease both;}
+  .hero-title{animation:fadeUp 0.6s 0.1s ease both;}
+  .hero-sub{animation:fadeUp 0.6s 0.2s ease both;}
+  .stats-row{animation:fadeUp 0.6s 0.3s ease both;}
 
   /* MOBILE */
-  @media (max-width: 600px) {
-    .wrap { padding: 0 16px; }
-    .hero { padding: 48px 0 40px; }
-    .level-inner { padding: 20px 16px 24px; }
-    .stats-row { grid-template-columns: 1fr; }
-    .kv-row { grid-template-columns: 1fr; gap: 4px; }
-    .kv-val { text-align: left; }
-    .method-grid { grid-template-columns: 1fr; }
-    .toggle-btn { min-width: 90px; font-size: 9px; padding: 8px 10px; }
+  @media(max-width:600px){
+    .wrap{padding:0 16px;}
+    .hero{padding:48px 0 40px;}
+    .level-inner{padding:20px 16px 24px;}
+    .stats-row{grid-template-columns:1fr;}
+    .kv-row{grid-template-columns:1fr;gap:4px;}
+    .kv-val{text-align:left;}
+    .method-grid{grid-template-columns:1fr;}
+    .toggle-btn{min-width:90px;font-size:9px;padding:8px 10px;}
   }
 </style>
 </head>
@@ -184,11 +163,11 @@
       HexSeed Technology
     </div>
     <p class="hero-eyebrow">Carbon Case Model · v7.2 · May 2026</p>
-    <h1 class="hero-title">We enable<br><span class="accent">20 MtCO₂e/yr</span><br>of avoided emissions</h1>
+    <h1 class="hero-title">We enable<br><span class="accent">12.5 MtCO₂e/yr</span><br>within 10 years</h1>
     <p class="hero-sub">Every number here comes directly from our carbon case model. Tap any section to go deeper — from plain English down to the raw inputs.</p>
     <div class="stats-row">
-      <div class="stat-cell"><div class="stat-num">750</div><div class="stat-label">Reactors by 2035</div></div>
-      <div class="stat-cell"><div class="stat-num">20 MtCO₂e</div><div class="stat-label">Avoided per year</div></div>
+      <div class="stat-cell"><div class="stat-num">300</div><div class="stat-label">Reactors · Year 10</div></div>
+      <div class="stat-cell"><div class="stat-num">12.5 MtCO₂e</div><div class="stat-label">Avoided · Year 10</div></div>
       <div class="stat-cell"><div class="stat-num">£307M</div><div class="stat-label">Projected revenue 2035</div></div>
     </div>
   </header>
@@ -197,7 +176,7 @@
   <p class="section-header">Three impact pathways</p>
   <div class="cards">
 
-    <!-- CARD 1 -->
+    <!-- CARD 1: PRODUCTION -->
     <div class="card" id="card-1">
       <div class="card-head" onclick="toggleCard('card-1')">
         <span class="card-num">01</span>
@@ -225,8 +204,9 @@
               <div class="kv-row"><div class="kv-key">Our electricity use per reactor/year<span class="source">SoA_vs_Our · D10</span></div><div class="kv-val">148,512 kWh</div></div>
               <div class="kv-row"><div class="kv-key">State of the art electricity use<span class="source">SoA_vs_Our · B10</span></div><div class="kv-val">445,536 kWh</div></div>
               <div class="kv-row"><div class="kv-key">Electricity reduction<span class="source">SoA_vs_Our</span></div><div class="kv-val">67%</div></div>
-              <div class="kv-row"><div class="kv-key">Annual gas cost saving vs state of the art<span class="source">SoA_vs_Our · F23</span></div><div class="kv-val">£11,303/reactor</div></div>
-              <div class="kv-row"><div class="kv-key">Annual carats produced per reactor<span class="source">Process_Throughput</span></div><div class="kv-val">32,865 carats</div></div>
+              <div class="kv-row"><div class="kv-key">Annual gas cost saving vs state of the art<span class="source">SoA_vs_Our · F23</span></div><div class="kv-val">£11,304/reactor</div></div>
+              <div class="kv-row"><div class="kv-key">Annual carats produced per reactor<span class="source">Process_Throughput · B33</span></div><div class="kv-val">32,865 carats</div></div>
+              <div class="kv-row"><div class="kv-key">Wafers coated per reactor per year<span class="source">Wafer_Coating_Output · B19</span></div><div class="kv-val">2,649 wafers</div></div>
             </div>
             <div class="btn-row"><button class="btn" onclick="showLevel('card-1',4)"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>See raw model inputs</button></div>
           </div>
@@ -239,14 +219,16 @@
               <div class="kv-row"><div class="kv-key">Operating hours per year<span class="source">Inputs</span></div><div class="kv-val">7,426 h/yr</div></div>
               <div class="kv-row"><div class="kv-key">CH₄ vol fraction (our process)<span class="source">Inputs</span></div><div class="kv-val">0.51</div></div>
               <div class="kv-row"><div class="kv-key">Carrier gas<span class="source">SoA_vs_Our · A5</span></div><div class="kv-val">CO₂ (ours) vs H₂ (SoA)</div></div>
-              <div class="kv-row"><div class="kv-key">PV electricity emission factor<span class="source">Carbon_Assumptions</span></div><div class="kv-val">0.04 kgCO₂e/kWh</div></div>
-              <div class="kv-row"><div class="kv-key">Grid electricity EF (state of the art)<span class="source">Carbon_Assumptions</span></div><div class="kv-val">0.55 kgCO₂e/kWh</div></div>
-              <div class="kv-row"><div class="kv-key">Green H₂ emission factor (PEM on PV)<span class="source">Sabatier_DAC</span></div><div class="kv-val">2.2 kgCO₂e/kgH₂</div></div>
-              <div class="kv-row"><div class="kv-key">e-methane emission factor (Sabatier on PV)<span class="source">Sabatier_DAC</span></div><div class="kv-val">1.83 kgCO₂e/kgCH₄</div></div>
-              <div class="kv-row"><div class="kv-key">Wafer diameter<span class="source">Process_Throughput</span></div><div class="kv-val">300 mm</div></div>
-              <div class="kv-row"><div class="kv-key">Coating thickness<span class="source">Process_Throughput</span></div><div class="kv-val">10 µm</div></div>
-              <div class="kv-row"><div class="kv-key">Growth rate<span class="source">Process_Throughput</span></div><div class="kv-val">10 µm/hr</div></div>
-              <div class="kv-row"><div class="kv-key">Quality yield<span class="source">Process_Throughput</span></div><div class="kv-val">0.65 Type II + 0.25 Type I</div></div>
+              <div class="kv-row"><div class="kv-key">PV electricity emission factor<span class="source">Carbon_Assumptions · B6</span></div><div class="kv-val">0.04 kgCO₂e/kWh</div></div>
+              <div class="kv-row"><div class="kv-key">Grid electricity EF (state of the art)<span class="source">Carbon_Assumptions · B5</span></div><div class="kv-val">0.55 kgCO₂e/kWh</div></div>
+              <div class="kv-row"><div class="kv-key">Green H₂ emission factor (PEM on PV)<span class="source">Sabatier_DAC · B17</span></div><div class="kv-val">2.2 kgCO₂e/kgH₂</div></div>
+              <div class="kv-row"><div class="kv-key">e-methane emission factor (Sabatier on PV)<span class="source">Sabatier_DAC · B28</span></div><div class="kv-val">1.83 kgCO₂e/kgCH₄</div></div>
+              <div class="kv-row"><div class="kv-key">Wafer diameter<span class="source">Process_Throughput · B5</span></div><div class="kv-val">300 mm</div></div>
+              <div class="kv-row"><div class="kv-key">Coating thickness<span class="source">Process_Throughput · B8</span></div><div class="kv-val">10 µm</div></div>
+              <div class="kv-row"><div class="kv-key">Growth rate<span class="source">Process_Throughput · B7</span></div><div class="kv-val">10 µm/hr</div></div>
+              <div class="kv-row"><div class="kv-key">Quality yield<span class="source">Process_Throughput · B10+B11</span></div><div class="kv-val">0.65 Type II + 0.25 Type I</div></div>
+              <div class="kv-row"><div class="kv-key">DAC energy consumption<span class="source">Sabatier_DAC · B6+B7 — Fasihi et al. 2019</span></div><div class="kv-val">1,500 kWh/tCO₂ elec + thermal</div></div>
+              <div class="kv-row"><div class="kv-key">Sabatier conversion efficiency<span class="source">Sabatier_DAC · B21 — Gao et al. 2015</span></div><div class="kv-val">78%</div></div>
             </div>
             <div class="btn-row"><button class="btn collapse" onclick="collapseCard('card-1')">Collapse</button></div>
           </div>
@@ -254,7 +236,7 @@
       </div>
     </div>
 
-    <!-- CARD 2 HERO -->
+    <!-- CARD 2: USE-PHASE HERO -->
     <div class="card hero-card" id="card-2">
       <div class="card-head" onclick="toggleCard('card-2')">
         <span class="card-num">02</span>
@@ -269,7 +251,7 @@
         <div class="level level-2" id="card-2-l2">
           <div class="level-inner">
             <div class="level-label">Plain English</div>
-            <p class="level-prose">Diamond is the best thermal conductor on earth. Coating a chip with it keeps the device cooler, so it uses less energy, runs more efficiently, and lasts longer. Each of those three effects reduces carbon emissions. Cooler chips also need less energy to cool them down, saving further energy at the data centre level.</p>
+            <p class="level-prose">Diamond is the best thermal conductor on earth. Coating a chip with it keeps the device cooler, so it uses less energy, runs more efficiently, and lasts longer. Each of those three effects reduces carbon emissions. The rebound effect — where a cooler chip runs harder and consumes more energy — has been modelled and is currently excluded as a conservative assumption.</p>
             <div class="btn-row"><button class="btn" onclick="showLevel('card-2',3)"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>See the numbers</button></div>
           </div>
         </div>
@@ -279,13 +261,14 @@
             <div class="kv-grid">
               <div class="kv-row"><div class="kv-key">Performance per watt improvement<span class="source">Use_Phase_Avoided_Emissions · B23</span></div><div class="kv-val">25%</div></div>
               <div class="kv-row"><div class="kv-key">Cooling energy reduction<span class="source">Use_Phase_Avoided_Emissions · B15</span></div><div class="kv-val">25%</div></div>
-              <div class="kv-row"><div class="kv-key">Cooling energy saved per GPU/year<span class="source">Use_Phase_Avoided_Emissions</span></div><div class="kv-val">657 kWh</div></div>
-              <div class="kv-row"><div class="kv-key">Performance efficiency saving per GPU/year<span class="source">Use_Phase_Avoided_Emissions</span></div><div class="kv-val">1,314 kWh</div></div>
-              <div class="kv-row"><div class="kv-key">Device lifetime extension<span class="source">Use_Phase_Avoided_Emissions</span></div><div class="kv-val">15%</div></div>
-              <div class="kv-row"><div class="kv-key">Embodied carbon avoided per GPU/year<span class="source">Use_Phase_Avoided_Emissions</span></div><div class="kv-val">~22.5 kgCO₂e</div></div>
-              <div class="kv-row"><div class="kv-key">Total avoided per GPU per year<span class="source">Use_Phase_Avoided_Emissions</span></div><div class="kv-val">1,087 kgCO₂e</div></div>
+              <div class="kv-row"><div class="kv-key">Cooling energy saved per GPU/year<span class="source">Use_Phase_Avoided_Emissions · B19</span></div><div class="kv-val">657 kWh</div></div>
+              <div class="kv-row"><div class="kv-key">Performance efficiency saving per GPU/year<span class="source">Use_Phase_Avoided_Emissions · B24</span></div><div class="kv-val">1,314 kWh</div></div>
+              <div class="kv-row"><div class="kv-key">Device lifetime extension<span class="source">Use_Phase_Avoided_Emissions · B40</span></div><div class="kv-val">15%</div></div>
+              <div class="kv-row"><div class="kv-key">Embodied carbon avoided per GPU/year<span class="source">Use_Phase_Avoided_Emissions · B43</span></div><div class="kv-val">3.9 kgCO₂e</div></div>
+              <div class="kv-row"><div class="kv-key">Total avoided per GPU per year (rebound OFF)<span class="source">Use_Phase_Avoided_Emissions · B59</span></div><div class="kv-val">1,087 kgCO₂e</div></div>
+              <div class="kv-row"><div class="kv-key">Rebound effect (Jevons)<span class="source">Use_Phase_Avoided_Emissions · B56</span></div><div class="kv-val">Modelled · OFF</div></div>
             </div>
-            <div class="kv-note">25% performance and cooling assumptions to be validated by experimental data. Conservative 15% lifetime extension applied per Arrhenius reliability model.</div>
+            <div class="kv-note">25% performance and cooling assumptions to be validated by experimental data. Conservative 15% lifetime extension applied per Arrhenius reliability model (MIL-HDBK-217F). Rebound effect modelled at 650 kgCO₂e/GPU/yr — excluded from headline figure as conservative assumption.</div>
             <div class="btn-row"><button class="btn" onclick="showLevel('card-2',4)"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>See raw model inputs</button></div>
           </div>
         </div>
@@ -293,13 +276,17 @@
           <div class="level-inner">
             <div class="level-label">Raw Model Inputs — Use_Phase_Avoided_Emissions · Carbon_Assumptions</div>
             <div class="kv-grid">
-              <div class="kv-row"><div class="kv-key">GPU average power consumption<span class="source">Use_Phase_Avoided_Emissions</span></div><div class="kv-val">700 W</div></div>
-              <div class="kv-row"><div class="kv-key">GPU operating hours per year<span class="source">Use_Phase_Avoided_Emissions</span></div><div class="kv-val">8,760 h/yr</div></div>
-              <div class="kv-row"><div class="kv-key">Grid emission factor<span class="source">Carbon_Assumptions</span></div><div class="kv-val">0.55 kgCO₂e/kWh</div></div>
-              <div class="kv-row"><div class="kv-key">Embodied carbon per GPU<span class="source">Use_Phase_Avoided_Emissions</span></div><div class="kv-val">150 kgCO₂e</div></div>
-              <div class="kv-row"><div class="kv-key">Standard replacement cycle<span class="source">Use_Phase_Avoided_Emissions</span></div><div class="kv-val">5 years</div></div>
-              <div class="kv-row"><div class="kv-key">Arrhenius model<span class="source">Use_Phase_Avoided_Emissions</span></div><div class="kv-val">10°C reduction → 2× lifetime</div></div>
-              <div class="kv-row"><div class="kv-key">Conservative lifetime extension applied<span class="source">Use_Phase_Avoided_Emissions</span></div><div class="kv-val">15%</div></div>
+              <div class="kv-row"><div class="kv-key">GPU average power consumption<span class="source">Use_Phase_Avoided_Emissions · B12</span></div><div class="kv-val">600 W</div></div>
+              <div class="kv-row"><div class="kv-key">GPU operating hours per year<span class="source">Use_Phase_Avoided_Emissions · B13</span></div><div class="kv-val">8,760 h/yr</div></div>
+              <div class="kv-row"><div class="kv-key">Cooling overhead factor (PUE – 1)<span class="source">Use_Phase_Avoided_Emissions · B14</span></div><div class="kv-val">0.5</div></div>
+              <div class="kv-row"><div class="kv-key">Grid emission factor<span class="source">Carbon_Assumptions · B5 — Malaysia</span></div><div class="kv-val">0.55 kgCO₂e/kWh</div></div>
+              <div class="kv-row"><div class="kv-key">Embodied carbon per GPU<span class="source">Use_Phase_Avoided_Emissions · B38 — Gupta et al. 2021</span></div><div class="kv-val">150 kgCO₂e</div></div>
+              <div class="kv-row"><div class="kv-key">Standard replacement cycle<span class="source">Use_Phase_Avoided_Emissions · B39</span></div><div class="kv-val">5 years</div></div>
+              <div class="kv-row"><div class="kv-key">Arrhenius model<span class="source">MIL-HDBK-217F · Lall 1997</span></div><div class="kv-val">10°C reduction → 2× lifetime</div></div>
+              <div class="kv-row"><div class="kv-key">Conservative lifetime extension applied<span class="source">Use_Phase_Avoided_Emissions · B40</span></div><div class="kv-val">15%</div></div>
+              <div class="kv-row"><div class="kv-key">Diamond mass per GPU<span class="source">Use_Phase_Avoided_Emissions · B8</span></div><div class="kv-val">0.175 g</div></div>
+              <div class="kv-row"><div class="kv-key">Rebound: baseline GPU utilisation<span class="source">Use_Phase_Avoided_Emissions · B47</span></div><div class="kv-val">75%</div></div>
+              <div class="kv-row"><div class="kv-key">Rebound: utilisation with diamond<span class="source">Use_Phase_Avoided_Emissions · B48</span></div><div class="kv-val">90%</div></div>
             </div>
             <div class="btn-row"><button class="btn collapse" onclick="collapseCard('card-2')">Collapse</button></div>
           </div>
@@ -307,13 +294,13 @@
       </div>
     </div>
 
-    <!-- CARD 3 -->
+    <!-- CARD 3: SEQUESTRATION -->
     <div class="card" id="card-3">
       <div class="card-head" onclick="toggleCard('card-3')">
         <span class="card-num">03</span>
         <div class="card-head-content">
           <div class="card-tag">Permanent Sequestration</div>
-          <div class="card-headline">3.66 kgCO₂ permanently locked per kg of diamond produced</div>
+          <div class="card-headline">3.66 kgCO₂ permanently locked per kg of diamond grown</div>
         </div>
         <svg class="card-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
@@ -321,33 +308,34 @@
         <div class="level level-2" id="card-3-l2">
           <div class="level-inner">
             <div class="level-label">Plain English</div>
-            <p class="level-prose">The carbon in our diamond starts as CO₂ captured from the atmosphere. Once it becomes diamond, it cannot decompose or release back into the air. It is permanently removed from the carbon cycle — locked in a crystal lattice that is chemically inert and indefinitely stable.</p>
+            <p class="level-prose">The carbon in our diamond starts as CO₂ captured from the atmosphere. Once it becomes diamond, it cannot decompose or release back into the air. It is permanently removed from the carbon cycle — locked in a crystal lattice that is chemically inert and indefinitely stable. This sequestration credit is not included in our headline figures; it would make the numbers larger.</p>
             <div class="btn-row"><button class="btn" onclick="showLevel('card-3',3)"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>See the numbers</button></div>
           </div>
         </div>
         <div class="level level-3" id="card-3-l3">
           <div class="level-inner">
-            <div class="level-label">Calculated Outputs — Carbon_Balance · Sabatier_DAC</div>
+            <div class="level-label">Calculated Outputs — Carbon_Balance · Carbon_Assumptions</div>
             <div class="kv-grid">
-              <div class="kv-row"><div class="kv-key">CO₂ sequestered per kg of diamond<span class="source">Carbon_Balance — atomic mass ratio C:CO₂ = 12:44</span></div><div class="kv-val">3.66 kgCO₂/kg</div></div>
-              <div class="kv-row"><div class="kv-key">Diamond produced per reactor per year<span class="source">Carbon_Balance · D42</span></div><div class="kv-val">6.57 kg</div></div>
+              <div class="kv-row"><div class="kv-key">CO₂ sequestered per kg of diamond grown<span class="source">Carbon_Assumptions · B42 — atomic mass ratio C:CO₂ = 12:44</span></div><div class="kv-val">3.664 kgCO₂/kg</div></div>
+              <div class="kv-row"><div class="kv-key">Diamond produced per reactor per year<span class="source">Carbon_Balance</span></div><div class="kv-val">6.57 kg</div></div>
               <div class="kv-row"><div class="kv-key">CO₂ permanently sequestered per reactor/year<span class="source">Carbon_Balance</span></div><div class="kv-val">~24 kgCO₂</div></div>
-              <div class="kv-row"><div class="kv-key">End of life emissions<span class="source">Carbon_Balance · D44</span></div><div class="kv-val">Zero</div></div>
+              <div class="kv-row"><div class="kv-key">Sequestration credit included in headline<span class="source">Carbon_Assumptions · B43</span></div><div class="kv-val">OFF — conservative</div></div>
+              <div class="kv-row"><div class="kv-key">End of life emissions<span class="source">Carbon_Balance · H44</span></div><div class="kv-val">Zero</div></div>
             </div>
-            <div class="kv-note">Sequestration credit is not included in the 20 MtCO₂e headline figure. Conservative accounting — the credit would make the number larger.</div>
+            <div class="kv-note">Credit excluded from all headline figures as a conservative accounting choice. Including it would increase avoided emissions per reactor. End of life pathway is WEEE — diamond is chemically inert with zero decomposition.</div>
             <div class="btn-row"><button class="btn" onclick="showLevel('card-3',4)"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>See raw model inputs</button></div>
           </div>
         </div>
         <div class="level level-4" id="card-3-l4">
           <div class="level-inner">
-            <div class="level-label">Raw Model Inputs — Sabatier_DAC · Carbon_Balance</div>
+            <div class="level-label">Raw Model Inputs — Sabatier_DAC · Carbon_Assumptions</div>
             <div class="kv-grid">
               <div class="kv-row"><div class="kv-key">Carbon feedstock<span class="source">Sabatier_DAC</span></div><div class="kv-val">CO₂ via direct air capture</div></div>
-              <div class="kv-row"><div class="kv-key">DAC energy consumption<span class="source">Sabatier_DAC — Fasihi et al. 2019</span></div><div class="kv-val">1,500 kWh/tCO₂ elec + thermal</div></div>
-              <div class="kv-row"><div class="kv-key">DAC emission factor (on PV)<span class="source">Sabatier_DAC</span></div><div class="kv-val">0.12 kgCO₂e/kgCO₂</div></div>
-              <div class="kv-row"><div class="kv-key">Sabatier conversion efficiency<span class="source">Sabatier_DAC</span></div><div class="kv-val">78%</div></div>
-              <div class="kv-row"><div class="kv-key">Atomic mass ratio CO₂:C<span class="source">Carbon_Balance</span></div><div class="kv-val">44/12 = 3.67</div></div>
-              <div class="kv-row"><div class="kv-key">Diamond density<span class="source">Process_Throughput</span></div><div class="kv-val">3.51 g/cm³</div></div>
+              <div class="kv-row"><div class="kv-key">DAC energy consumption<span class="source">Sabatier_DAC · B6+B7 — Fasihi et al. 2019</span></div><div class="kv-val">1,500 kWh/tCO₂ elec + thermal</div></div>
+              <div class="kv-row"><div class="kv-key">DAC emission factor (on PV)<span class="source">Sabatier_DAC · B11</span></div><div class="kv-val">0.12 kgCO₂e/kgCO₂</div></div>
+              <div class="kv-row"><div class="kv-key">Sabatier conversion efficiency<span class="source">Sabatier_DAC · B21 — Gao et al. 2015</span></div><div class="kv-val">78%</div></div>
+              <div class="kv-row"><div class="kv-key">Atomic mass ratio CO₂:C<span class="source">Carbon_Assumptions · B42</span></div><div class="kv-val">44.01/12.011 = 3.664</div></div>
+              <div class="kv-row"><div class="kv-key">Diamond density<span class="source">Process_Throughput · B9</span></div><div class="kv-val">3.51 g/cm³</div></div>
               <div class="kv-row"><div class="kv-key">End of life pathway<span class="source">Carbon_Balance · H44</span></div><div class="kv-val">WEEE — zero decomposition</div></div>
             </div>
             <div class="btn-row"><button class="btn collapse" onclick="collapseCard('card-3')">Collapse</button></div>
@@ -355,7 +343,6 @@
         </div>
       </div>
     </div>
-
   </div>
 
   <!-- METHODOLOGY SPLIT -->
@@ -364,32 +351,30 @@
     <div class="method-grid">
       <div class="method-card full">
         <div class="method-title">Combined (Cradle-to-gate + Use-phase avoided)</div>
-        <div class="method-num">20 MtCO₂e/yr</div>
-        <div class="method-desc">Headline figure at 750 reactors. Includes production process savings and full use-phase efficiency gains from diamond-coated chips in operation.</div>
+        <div class="method-num">12.5 MtCO₂e/yr</div>
+        <div class="method-desc">At Year 10 with 300 reactors. Includes production process savings and full use-phase efficiency gains from diamond-coated chips in operation. Rebound effect excluded (conservative).</div>
       </div>
       <div class="method-card">
         <div class="method-title">Cradle-to-gate only</div>
-        <div class="method-num" style="font-size:clamp(18px,2.5vw,26px)">~6.7 tCO₂e<br><span style="font-size:14px;font-weight:400;color:var(--grey)">saved per reactor/yr vs SoA</span></div>
+        <div class="method-num" style="font-size:clamp(18px,2.5vw,26px)">~2,660 tCO₂e/yr<br><span style="font-size:14px;font-weight:400;color:var(--grey)">at 300 reactors (Year 10)</span></div>
         <div class="method-desc">Production process improvement only. Compares our CO₂/PV route against the hydrogen/grid state of the art. Does not include downstream chip performance benefits.</div>
       </div>
       <div class="method-card">
         <div class="method-title">Use-phase avoided only</div>
         <div class="method-num" style="font-size:clamp(18px,2.5vw,26px)">1,087 kgCO₂e<br><span style="font-size:14px;font-weight:400;color:var(--grey)">per GPU per year</span></div>
-        <div class="method-desc">Downstream impact only from chips in operation. Cooling savings, performance-per-watt improvement, and lifetime extension. This is the dominant driver of the 20 MtCO₂e headline.</div>
+        <div class="method-desc">Downstream impact only. Cooling savings, performance-per-watt improvement, and lifetime extension. This is the dominant driver of the 12.5 MtCO₂e headline.</div>
       </div>
     </div>
   </div>
 
-  <!-- CARBON TRAJECTORY -->
-  <p class="section-header">Avoided emissions trajectory 2025–2040</p>
+  <!-- TRAJECTORY -->
+  <p class="section-header">Avoided emissions trajectory · Year 1–15</p>
   <div class="trajectory-section">
-
     <div class="toggle-group">
       <button class="toggle-btn active" onclick="setMode('combined')" id="btn-combined">Cradle-to-gate + Use-phase</button>
       <button class="toggle-btn" onclick="setMode('ctg')" id="btn-ctg">Cradle-to-gate only</button>
       <button class="toggle-btn" onclick="setMode('use')" id="btn-use">Use-phase only</button>
     </div>
-
     <div style="overflow-x:auto;">
       <table class="traj-table" id="traj-table">
         <thead>
@@ -398,14 +383,26 @@
             <th>Reactors</th>
             <th>Carats/yr</th>
             <th id="th-avoided">Avoided (tCO₂e/yr)</th>
-            <th>vs SoA (tCO₂e/yr)</th>
+            <th>SoA baseline (tCO₂e/yr)</th>
           </tr>
         </thead>
         <tbody id="traj-body"></tbody>
       </table>
     </div>
-    <p class="traj-note" id="traj-note">Source: Carbon_Trajectory sheet · Column N (combined) · Reactor scaling from Year 1 pilot to 750 reactors by Year 13.</p>
+    <p class="traj-note" id="traj-note">Source: Carbon_Trajectory · Column N. Combined cradle-to-gate + use-phase avoided. Rebound effect OFF.</p>
+  </div>
 
+  <!-- REFERENCES -->
+  <div class="refs-section">
+    <div class="refs-title">Key References</div>
+    <div class="refs-list">
+      <div class="ref-item"><span>[1]</span>Fasihi et al. (2019). Techno-economic assessment of CO₂ direct air capture plants. J. Cleaner Production. DOI: 10.1016/j.jclepro.2019.03.086</div>
+      <div class="ref-item"><span>[2]</span>Gupta et al. (2021). Chasing Carbon: The Elusive Environmental Footprint of Computing. IEEE HPCA. DOI: 10.1109/HPCA51647.2021.00076</div>
+      <div class="ref-item"><span>[3]</span>Gao et al. (2015). Recent advances in methanation catalysts for Sabatier reaction. RSC Advances. DOI: 10.1039/C4RA16114A</div>
+      <div class="ref-item"><span>[4]</span>IRENA (2020). Green Hydrogen Cost Reduction: Scaling up Electrolysers to Meet the 1.5°C Climate Goal.</div>
+      <div class="ref-item"><span>[5]</span>MIL-HDBK-217F / Lall (1997). Arrhenius reliability model: 10°C junction temperature reduction approximately doubles device lifetime.</div>
+      <div class="ref-item"><span>[6]</span>DEFRA/DESNZ (2024). Greenhouse Gas Reporting: Conversion Factors 2024.</div>
+    </div>
   </div>
 
   <!-- FOOTER -->
@@ -414,7 +411,7 @@
       <div class="footer-title">HexSeed Technology Limited</div>
       <p class="footer-text">
         All data from Carbon Case Model v7.2, May 2026.<br>
-        Use-phase efficiency figures (25% performance and cooling improvement) are assumptions pending experimental validation.<br><br>
+        Use-phase efficiency figures (25% performance and cooling improvement) are assumptions pending experimental validation. Rebound effect modelled but excluded from headline figures as a conservative assumption.<br><br>
         © 2026 HexSeed Technology Limited. Full model available on request.
       </p>
     </div>
@@ -432,7 +429,7 @@
 </div>
 
 <script>
-  // ── CARD LOGIC ──
+  // CARD LOGIC
   function toggleCard(id) {
     const card = document.getElementById(id);
     const isOpen = card.classList.contains('open');
@@ -460,74 +457,63 @@
     collapseAllLevels(cardId);
   }
 
-  // ── TRAJECTORY DATA ──
-  // [year, reactors, carats, combined_tCO2e, ctg_tCO2e, soa_tCO2e]
-  // combined = N col, ctg = our intensity saving vs soa per carat × carats
-  // soa = H col
+  // TRAJECTORY DATA — [year, reactors, carats, combined_tCO2e, ctg_tCO2e, soa_tCO2e]
   const trajData = [
-    [2025, 0, 0, 0, 0, 0],
-    [2026, 0, 0, 0, 0, 0],
-    [2027, 1, 32865, 41667, 238, 247],
-    [2028, 2, 65730, 83333, 476, 494],
-    [2029, 4, 131461, 166667, 952, 987],
-    [2030, 8, 262922, 333334, 1904, 1974],
-    [2031, 14, 460113, 583334, 3332, 3455],
-    [2032, 25, 821630, 1041668, 5950, 6170],
-    [2033, 35, 1150282, 1458336, 8330, 8638],
-    [2034, 70, 2300564, 2916672, 16659, 17277],
-    [2035, 150, 4929779, 6250011, 35688, 37021],
-    [2036, 250, 8216298, 10416685, 59472, 61702],
-    [2037, 350, 11502818, 14583358, 83261, 86383],
-    [2038, 450, 14789337, 18750032, 107049, 111064],
-    [2039, 750, 24648895, 31250054, 178416, 185107],
-    [2040, 750, 24648895, 31250054, 178416, 185107],
+    [1,  1,   32865,    41667,    9,    247],
+    [2,  2,   65730,    83333,    18,   494],
+    [3,  4,   131461,   166667,   35,   987],
+    [4,  8,   262922,   333334,   71,   1974],
+    [5,  14,  460113,   583334,   124,  3455],
+    [6,  25,  821630,   1041668,  222,  6170],
+    [7,  35,  1150282,  1458336,  310,  8638],
+    [8,  70,  2300564,  2916672,  621,  17277],
+    [9,  270, 8873602,  11250019, 2394, 66639],
+    [10, 300, 9859558,  12500022, 2660, 74043],
+    [11, 400, 13146077, 16666695, 3547, 98724],
+    [12, 500, 16432597, 20833369, 4433, 123405],
+    [13, 750, 24648895, 31250054, 6650, 185107],
+    [14, 750, 24648895, 31250054, 6650, 185107],
+    [15, 750, 24648895, 31250054, 6650, 185107],
   ];
 
-  let currentMode = 'combined';
-
   const notes = {
-    combined: 'Source: Carbon_Trajectory · Column N. Includes cradle-to-gate savings and full use-phase avoided emissions from diamond-coated chips in operation.',
-    ctg: 'Source: Carbon_Trajectory · cradle-to-gate only. Production process improvement vs hydrogen/grid state of the art. Does not include downstream chip benefits.',
-    use: 'Source: Carbon_Trajectory · use-phase avoided only. Downstream chip performance gains: cooling savings, efficiency improvement, and lifetime extension.'
+    combined: 'Source: Carbon_Trajectory · Column N. Combined cradle-to-gate + use-phase avoided emissions. Rebound effect OFF (conservative).',
+    ctg: 'Source: Carbon_Trajectory · Our emissions column L. Cradle-to-gate only — production process improvement vs hydrogen/grid state of the art.',
+    use: 'Source: Carbon_Trajectory · Use-phase component. Downstream chip performance gains: cooling savings, efficiency improvement, and lifetime extension.'
   };
 
   function fmt(n) {
-    if (n === 0) return '—';
+    if (!n || n === 0) return '—';
     if (n >= 1000000) return (n/1000000).toFixed(1) + 'M';
     if (n >= 1000) return n.toLocaleString();
     return n.toString();
   }
 
   function setMode(mode) {
-    currentMode = mode;
-    ['combined','ctg','use'].forEach(m => {
-      document.getElementById('btn-'+m).classList.toggle('active', m === mode);
-    });
+    ['combined','ctg','use'].forEach(m => document.getElementById('btn-'+m).classList.toggle('active', m === mode));
     document.getElementById('traj-note').textContent = notes[mode];
-    renderTable();
+    renderTable(mode);
   }
 
-  function renderTable() {
+  function renderTable(mode) {
     const tbody = document.getElementById('traj-body');
-    const th = document.getElementById('th-avoided');
-    const labels = { combined: 'Avoided tCO₂e/yr', ctg: 'Cradle-to-gate tCO₂e/yr', use: 'Use-phase tCO₂e/yr' };
-    th.textContent = labels[currentMode];
-
-    tbody.innerHTML = trajData.map(([year, reactors, carats, combined, ctg, soa]) => {
-      const val = currentMode === 'combined' ? combined : currentMode === 'ctg' ? ctg : (combined - ctg);
-      const isMilestone = [2027, 2030, 2035, 2040].includes(year);
-      const cls = isMilestone ? 'milestone' : '';
+    const labels = { combined:'Avoided tCO₂e/yr', ctg:'Cradle-to-gate tCO₂e/yr', use:'Use-phase tCO₂e/yr' };
+    document.getElementById('th-avoided').textContent = labels[mode];
+    const milestones = [1, 5, 10, 13, 15];
+    tbody.innerHTML = trajData.map(([yr, reactors, carats, combined, ctg, soa]) => {
+      const val = mode === 'combined' ? combined : mode === 'ctg' ? ctg : (combined - ctg);
+      const cls = milestones.includes(yr) ? 'milestone' : '';
       return `<tr class="${cls}">
-        <td class="year">${year}</td>
-        <td>${reactors || '—'}</td>
-        <td>${carats ? fmt(carats) : '—'}</td>
+        <td class="year">Yr ${yr}</td>
+        <td>${fmt(reactors)}</td>
+        <td>${fmt(carats)}</td>
         <td class="avoided">${fmt(Math.round(val))}</td>
         <td>${fmt(Math.round(soa))}</td>
       </tr>`;
     }).join('');
   }
 
-  renderTable();
+  renderTable('combined');
 </script>
 </body>
 </html>
